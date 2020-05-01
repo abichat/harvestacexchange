@@ -11,6 +11,9 @@ scrape_and_write(page, path)
 
 \item{path}{Path to write to.}
 }
+\value{
+\code{NULL}
+}
 \description{
 Scrape webpage
 }
