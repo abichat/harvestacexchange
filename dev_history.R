@@ -11,6 +11,8 @@ library(devtools)
 
 # dir.create("inst/extdata", recursive = TRUE)
 
+# use_r("scrape")
+
 
 load_all()
 document()
