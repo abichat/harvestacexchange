@@ -13,12 +13,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-# scrapeacexchange
+# harvestacexchange
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-**scrapeacexchange** provides function to harvest [animalcrossingexchange.com](https://app.animalcrossingexchange.com).
+**harvestacexchange** provides function to harvest [animalcrossingexchange.com](https://app.animalcrossingexchange.com).
 
 ## Installation
 
@@ -26,13 +26,13 @@ You can install from GitHub with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("abichat/scrapeacexchange")
+remotes::install_github("abichat/harvestacexchange")
 ```
 
 ## Harvesting
 
 ```{r example}
-library(scrapeacexchange)
+library(harvestacexchange)
 ```
 
 You can harvest turnips prices from `r url_turnips` :

@@ -19,6 +19,8 @@ library(devtools)
 
 # use_readme_rmd()
 
+# use_github()
+
 load_all()
 document()
 attachment::att_to_description()
