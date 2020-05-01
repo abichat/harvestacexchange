@@ -21,8 +21,11 @@ library(devtools)
 
 # use_github()
 
+use_logo("man/figures/hex.png")
+
 load_all()
 document()
 attachment::att_to_description()
+use_tidy_description()
 
 check()
