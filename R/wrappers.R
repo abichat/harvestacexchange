@@ -11,16 +11,17 @@
 turnips <- function(){
   file <- tempfile(fileext = ".html")
   harvest_and_write(harvestacexchange::url_turnips, file)
-  df <- turnips_html_to_tibble(file)
+  df <- html_to_tibble_turnips(file)
   rm(file)
   return(df)
 }
 
 #' @rdname turnips
+#' @export
 events <- function(){
   file <- tempfile(fileext = ".html")
   harvest_and_write(harvestacexchange::url_events, file)
-  df <- events_html_to_tibble(file)
+  df <- html_to_tibble_events(file)
   rm(file)
   return(df)
 }

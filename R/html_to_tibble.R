@@ -14,16 +14,16 @@
 #' @importFrom tidyr separate
 #' @importFrom xml2 read_html
 #'
-turnips_html_to_tibble <- function(path_to_html){
+html_to_tibble_turnips <- function(path_to_html){
   path_to_html %>%
     read_html() %>%
     html_node(".queue-list") %>%
     html_nodes(".align-items-stretch") %>%
     unclass()  %>%
     map(~ html_nodes(., ".d-flex")) %>%
-    map(html_text) %>%
     extract(-1) %>%
-    map(add_elements, desired_length = 6, element = "No tag") %>%
+    map(html_text) %>%
+    map(clean_turnips) %>%
     map(as.list) %>%
     transpose() %>%
     map(unlist) %>%
@@ -36,8 +36,8 @@ turnips_html_to_tibble <- function(path_to_html){
            tags = str_trim(.data$tags))
 }
 
-#' @rdname turnips_html_to_tibble
-events_html_to_tibble <- function(path_to_html){
+#' @rdname html_to_tibble_turnips
+html_to_tibble_events <- function(path_to_html){
   path_to_html %>%
     read_html() %>%
     html_node(".queue-list") %>%

@@ -6,7 +6,7 @@ library(devtools)
 # use_git()
 
 # use_r("html_to_tibble")
-# use_r("helpers")
+# use_r("clean")
 
 # dir.create("inst/extdata", recursive = TRUE)
 

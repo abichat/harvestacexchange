@@ -35,9 +35,15 @@ remotes::install_github("abichat/harvestacexchange")
 library(harvestacexchange)
 ```
 
-You can harvest turnips prices from `r url_turnips` :
+You can harvest turnips prices from `r url_turnips`:
 
 ```{r turnips}
 turnips()
+```
+
+and list of events from `r url_events`:
+
+```{r events}
+events()
 ```
 
