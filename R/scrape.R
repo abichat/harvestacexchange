@@ -4,7 +4,6 @@
 #' @param path Path to write to.
 #'
 #' @return \code{NULL}
-#' @export
 #'
 scrape_and_write <- function(page, path){
   jspath <- system.file("extdata", "write_html.js", package = "scrapeacexchange")

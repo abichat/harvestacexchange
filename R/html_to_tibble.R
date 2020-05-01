@@ -3,7 +3,6 @@
 #' @param path_to_html An html file.
 #'
 #' @return A tibble
-#' @export
 #'
 #' @importFrom dplyr across mutate
 #' @importFrom magrittr extract set_names %>%
@@ -31,7 +30,8 @@ turnips_html_to_tibble <- function(path_to_html){
     set_names(c("price", "waiters", "time", "voting", "line", "tags")) %>%
     as_tibble() %>%
     separate(.data$voting, into = c("grade", "voters"), extra = "drop") %>%
-    mutate(across(c(.data$price, .data$waiters, .data$grade, .data$voters), as.numeric),
+    mutate(across(c(.data$price, .data$waiters, .data$grade, .data$voters),
+                  ~ suppressWarnings(as.numeric(.))),
            tags = str_remove(.data$tags, "Tags"),
            tags = str_trim(.data$tags))
 }
