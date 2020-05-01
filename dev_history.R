@@ -3,4 +3,14 @@ library(devtools)
 # use_build_ignore("dev_history.R")
 # use_gpl3_license("Antoine Bichat")
 
-use_git()
+# use_git()
+
+
+# use_r("html_to_tibble")
+# use_r("helpers")
+
+load_all()
+document()
+attachment::att_to_description()
+
+check()

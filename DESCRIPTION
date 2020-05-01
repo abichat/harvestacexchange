@@ -7,8 +7,19 @@ Authors@R:
            role = c("aut", "cre"),
            email = "a.bichat@yahoo.fr",
            comment = c(ORCID = "0000-0001-6599-7081"))
-Description: Provides helpers function to parse `animalcrossingexchange.com` 
+Description: Provides helpers function to parse
+    `animalcrossingexchange.com`.
 License: GPL-3
+Imports: 
+    dplyr,
+    magrittr,
+    purrr,
+    rlang,
+    rvest,
+    stringr,
+    tibble,
+    tidyr,
+    xml2
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
