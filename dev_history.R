@@ -21,7 +21,7 @@ library(devtools)
 
 # use_github()
 
-use_logo("man/figures/hex.png")
+# use_logo("man/figures/hex.png")
 
 load_all()
 document()

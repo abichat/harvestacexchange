@@ -35,3 +35,25 @@ turnips_html_to_tibble <- function(path_to_html){
            tags = str_remove(.data$tags, "Tags"),
            tags = str_trim(.data$tags))
 }
+
+#' @rdname turnips_html_to_tibble
+events_html_to_tibble <- function(path_to_html){
+  path_to_html %>%
+    read_html() %>%
+    html_node(".queue-list") %>%
+    html_nodes(".align-items-stretch") %>%
+    unclass()  %>%
+    map(~ html_nodes(., ".d-flex")) %>%
+    extract(-1) %>%
+    map(html_text) %>%
+    map(clean_events) %>%
+    map(as.list) %>%
+    transpose() %>%
+    map(unlist) %>%
+    set_names(c("event", "waiters", "time", "voting",
+                "line", "notice", "tags")) %>%
+    as_tibble() %>%
+    separate(.data$voting, into = c("grade", "voters"), extra = "drop") %>%
+    mutate(across(c(waiters, grade, voters), ~ suppressWarnings(as.numeric(.))),
+           tags = str_trim(tags))
+}

@@ -2,9 +2,12 @@
 % Please edit documentation in R/html_to_tibble.R
 \name{turnips_html_to_tibble}
 \alias{turnips_html_to_tibble}
+\alias{events_html_to_tibble}
 \title{Convert HTML files to tibbles}
 \usage{
 turnips_html_to_tibble(path_to_html)
+
+events_html_to_tibble(path_to_html)
 }
 \arguments{
 \item{path_to_html}{An html file.}

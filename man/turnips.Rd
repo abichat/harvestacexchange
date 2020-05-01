@@ -2,18 +2,22 @@
 % Please edit documentation in R/wrappers.R
 \name{turnips}
 \alias{turnips}
-\title{Harvest turnips prices}
+\alias{events}
+\title{Harvest turnips prices and events}
 \usage{
 turnips()
+
+events()
 }
 \value{
 A tibble.
 }
 \description{
-Harvest turnips prices
+Harvest turnips prices and events
 }
 \examples{
 \dontrun{
 turnips()
+events()
 }
 }
