@@ -1,4 +1,4 @@
-#' Scrape turnips prices
+#' Harvest turnips prices
 #'
 #' @return A tibble.
 #' @export
@@ -9,7 +9,7 @@
 #' }
 turnips <- function(){
   file <- tempfile(fileext = ".html")
-  scrape_and_write(scrapeacexchange::url_turnips, file)
+  harvest_and_write(harvestacexchange::url_turnips, file)
   df <- turnips_html_to_tibble(file)
   rm(file)
   return(df)

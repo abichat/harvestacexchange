@@ -1,12 +1,13 @@
-#' Scrape webpage
+#' Harvest webpage
 #'
 #' @param page The targeted URL.
 #' @param path Path to write to.
 #'
 #' @return \code{NULL}
 #'
-scrape_and_write <- function(page, path){
-  jspath <- system.file("extdata", "write_html.js", package = "scrapeacexchange")
+harvest_and_write <- function(page, path){
+  jspath <- system.file("extdata", "write_html.js",
+                        package = "harvestacexchange")
   command <- paste("node", jspath, page, path)
   system(command)
   invisible()

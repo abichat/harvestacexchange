@@ -10,7 +10,7 @@ library(devtools)
 
 # dir.create("inst/extdata", recursive = TRUE)
 
-# use_r("scrape")
+# use_r("harvest")
 
 # use_data_raw("urls")
 # use_r("urls")

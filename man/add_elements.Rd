@@ -20,5 +20,5 @@ A vector of length \code{desired_length}.
 Add repeted elements up to a desired length.
 }
 \examples{
-scrapeacexchange:::add_elements(1:4, 7)
+harvestacexchange:::add_elements(1:4, 7)
 }

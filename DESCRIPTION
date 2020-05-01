@@ -1,5 +1,5 @@
-Package: scrapeacexchange
-Title: Scrape AC Exchange Website
+Package: harvestacexchange
+Title: Harvest AC Exchange Website
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Antoine",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "a.bichat@yahoo.fr",
            comment = c(ORCID = "0000-0001-6599-7081"))
-Description: Provides helpers function to parse
+Description: Provides helpers function to harvest
     `animalcrossingexchange.com`.
 License: GPL-3
 Depends: 

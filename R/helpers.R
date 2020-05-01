@@ -9,7 +9,7 @@
 #' @return A vector of length \code{desired_length}.
 #'
 #' @examples
-#' scrapeacexchange:::add_elements(1:4, 7)
+#' harvestacexchange:::add_elements(1:4, 7)
 add_elements <- function(x, desired_length, element = NA){
   len <- length(x)
   c(x, rep(element, desired_length - len))

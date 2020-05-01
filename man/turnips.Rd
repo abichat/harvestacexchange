@@ -2,7 +2,7 @@
 % Please edit documentation in R/wrappers.R
 \name{turnips}
 \alias{turnips}
-\title{Scrape turnips prices}
+\title{Harvest turnips prices}
 \usage{
 turnips()
 }
@@ -10,7 +10,7 @@ turnips()
 A tibble.
 }
 \description{
-Scrape turnips prices
+Harvest turnips prices
 }
 \examples{
 \dontrun{
