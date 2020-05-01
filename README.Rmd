@@ -1,0 +1,43 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# scrapeacexchange
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+**scrapeacexchange** provides function to harvest [animalcrossingexchange.com](https://app.animalcrossingexchange.com).
+
+## Installation
+
+You can install from GitHub with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("abichat/scrapeacexchange")
+```
+
+## Harvesting
+
+```{r example}
+library(scrapeacexchange)
+```
+
+You can harvest turnips prices from `r url_turnips` :
+
+```{r turnips}
+turnips()
+```
+

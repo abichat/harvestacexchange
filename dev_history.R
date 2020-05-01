@@ -5,7 +5,6 @@ library(devtools)
 
 # use_git()
 
-
 # use_r("html_to_tibble")
 # use_r("helpers")
 
@@ -18,6 +17,7 @@ library(devtools)
 
 # use_r("wrappers")
 
+# use_readme_rmd()
 
 load_all()
 document()
