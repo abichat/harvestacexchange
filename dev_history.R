@@ -9,6 +9,9 @@ library(devtools)
 # use_r("html_to_tibble")
 # use_r("helpers")
 
+# dir.create("inst/extdata", recursive = TRUE)
+
+
 load_all()
 document()
 attachment::att_to_description()
