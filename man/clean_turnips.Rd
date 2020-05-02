@@ -7,7 +7,7 @@
 clean_turnips(text)
 }
 \arguments{
-\item{text}{Characterof length 5 or 6}
+\item{text}{Character of length 5 or 6}
 }
 \value{
 Character of length 6.

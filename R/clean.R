@@ -1,6 +1,6 @@
 #' Clean harvested turnips prices
 #'
-#' @param text Characterof length 5 or 6
+#' @param text Character of length 5 or 6
 #'
 #' @return Character of length 6.
 #'
@@ -22,7 +22,7 @@ clean_turnips <- function(text){
 
 #' Clean harvested events
 #'
-#' @param text Characterof length 9 or 11.
+#' @param text Character of length 9 or 11.
 #'
 #' @return Character of length 7.
 #'

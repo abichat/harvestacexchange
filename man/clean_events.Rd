@@ -7,7 +7,7 @@
 clean_events(text)
 }
 \arguments{
-\item{text}{Characterof length 9 or 11.}
+\item{text}{Character of length 9 or 11.}
 }
 \value{
 Character of length 7.
