@@ -23,6 +23,10 @@ library(devtools)
 
 # use_logo("man/figures/hex.png")
 
+# use_r("messages")
+# use_data_raw("templates")
+
+
 load_all()
 document()
 attachment::att_to_description()
