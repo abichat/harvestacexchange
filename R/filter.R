@@ -1,4 +1,4 @@
-#' Filter functions
+#' Basic filter functions
 #'
 #' @param df Formatted data frame.
 #' @param price_min Minimum price.
@@ -71,4 +71,24 @@ filter_words <- function(df, words){
     mutate(n_lower = str_to_lower(.data$notice)) %>%
     filter(str_detect(.data$n_lower, words)) %>%
     select(-.data$n_lower)
+}
+
+
+#' Filter a dataframe based on another one
+#'
+#' @inheritParams filter_price_min
+#' @param df_old A dataframe of the same type to be compared to.
+#'
+#' @return A filtered dataframe.
+#' @export
+#'
+filter_old_turnips <- function(df, df_old = NULL){
+  filter(df, ! .data$price %in% df_old$price)
+}
+
+#' @rdname filter_old_turnips
+#'
+#' @export
+filter_old_events <- function(df, df_old = NULL){
+  filter(df, ! .data$notice %in% df_old$notice)
 }

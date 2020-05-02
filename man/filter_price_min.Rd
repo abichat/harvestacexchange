@@ -6,7 +6,7 @@
 \alias{filter_line}
 \alias{filter_no_tag}
 \alias{filter_words}
-\title{Filter functions}
+\title{Basic filter functions}
 \usage{
 filter_price_min(df, price_min = 500)
 
@@ -33,7 +33,7 @@ filter_words(df, words)
 A filtered dataframe.
 }
 \description{
-Filter functions
+Basic filter functions
 }
 \examples{
 \dontrun{
