@@ -10,7 +10,7 @@ message_turnips(df, bot, chat_id)
 message_events(df, bot, chat_id)
 }
 \arguments{
-\item{df}{Formatted ata frame.}
+\item{df}{Formatted data frame.}
 
 \item{bot}{Telegram bot.}
 

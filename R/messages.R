@@ -1,6 +1,6 @@
 #' Send a message with a Telegram bot
 #'
-#' @param df Formatted ata frame.
+#' @param df Formatted data frame.
 #' @param bot Telegram bot.
 #' @param chat_id Chat id.
 #'
