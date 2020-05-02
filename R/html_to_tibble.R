@@ -54,6 +54,7 @@ html_to_tibble_events <- function(path_to_html){
                 "line", "notice", "tags")) %>%
     as_tibble() %>%
     separate(.data$voting, into = c("grade", "voters"), extra = "drop") %>%
-    mutate(across(c(waiters, grade, voters), ~ suppressWarnings(as.numeric(.))),
-           tags = str_trim(tags))
+    mutate(across(c(.data$waiters, .data$grade, .data$voters),
+                  ~ suppressWarnings(as.numeric(.))),
+           tags = str_trim(.data$tags))
 }
