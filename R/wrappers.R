@@ -12,7 +12,8 @@
 #' events()
 #' }
 turnips <- function(dir_js = ".js"){
-  stopifnot(file.exists(file.path(dir_js, "write_html.js")))
+  path_js <- file.path(dir_js, "write_html.js")
+  stopifnot(file.exists(path_js))
   file <- tempfile(fileext = ".html")
   harvest_and_write(harvestacexchange::url_turnips, file, dir_js)
   df <- html_to_tibble_turnips(file)
@@ -23,7 +24,8 @@ turnips <- function(dir_js = ".js"){
 #' @rdname turnips
 #' @export
 events <- function(dir_js = ".js"){
-  stopifnot(file.exists(file.path(dir_js, "write_html.js")))
+  path_js <- file.path(dir_js, "write_html.js")
+  stopifnot(file.exists(path_js))
   file <- tempfile(fileext = ".html")
   harvest_and_write(harvestacexchange::url_events, file, dir_js)
   df <- html_to_tibble_events(file)
