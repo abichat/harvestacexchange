@@ -4,12 +4,15 @@
 \alias{harvest_and_write}
 \title{Harvest webpage}
 \usage{
-harvest_and_write(page, path)
+harvest_and_write(page, path, dir_js = ".js")
 }
 \arguments{
 \item{page}{The targeted URL.}
 
 \item{path}{Path to write to.}
+
+\item{dir_js}{The directory where all the JS dependencies are installed.
+Default to \code{.js}.}
 }
 \value{
 \code{NULL}

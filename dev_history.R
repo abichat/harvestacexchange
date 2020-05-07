@@ -8,7 +8,7 @@ library(devtools)
 # use_r("html_to_tibble")
 # use_r("clean")
 
-# dir.create("inst/extdata", recursive = TRUE)
+# dir.create("inst/js", recursive = TRUE)
 
 # use_r("harvest")
 
@@ -28,6 +28,8 @@ library(devtools)
 
 # use_r("filter")
 
+# use_r("js_dep")
+
 
 load_all()
 document()
@@ -37,3 +39,5 @@ use_tidy_description()
 check()
 
 spell_check()
+
+
