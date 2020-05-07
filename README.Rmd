@@ -29,19 +29,28 @@ You can install from GitHub with:
 remotes::install_github("abichat/harvestacexchange")
 ```
 
+You need to have [Node.js](https://nodejs.org/) installed on your computer.
+
 ## Harvesting
 
 ```{r example}
 library(harvestacexchange)
 ```
 
-You can harvest turnips prices from `r url_turnips`:
+The first time you use **harvestacexchange** in a project, you need to install the JS dependencies.
+
+```{r js, eval=FALSE}
+install_js_dep()
+```
+
+
+You can harvest turnips prices from `r url_turnips`
 
 ```{r turnips}
 turnips()
 ```
 
-and list of events from `r url_events`:
+and list of events from `r url_events`
 
 ```{r events}
 events()
