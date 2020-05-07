@@ -43,16 +43,41 @@ The first time you use **harvestacexchange** in a project, you need to install t
 install_js_dep()
 ```
 
+### Harvest
 
 You can harvest turnips prices from `r url_turnips`
 
 ```{r turnips}
-turnips()
+df_turnips <- turnips()
+df_turnips
 ```
 
 and list of events from `r url_events`
 
 ```{r events}
-events()
+df_events <- events()
+df_events
 ```
+
+### Filter
+
+**harvestacexchange** provides some useful filtering functions
+
+```{r}
+df_turnips %>% 
+  filter_price_min(price_min = 500) %>% 
+  filter_no_tag()
+
+df_events %>% 
+  filter_words("gold") %>% 
+  filter_grade_min(grade_min = 90)
+```
+
+You can also compare these data to old versions and keep only the new lines with `filter_old_turnips()` and `filter_old_events()`.
+
+
+### Telegram
+
+If you have configured a [Telegram bot](https://github.com/ebeneditos/telegram.bot), 
+you can send messages with `message_turnips()` and `message_events()`.
 

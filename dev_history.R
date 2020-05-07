@@ -37,8 +37,10 @@ document()
 attachment::att_to_description()
 use_tidy_description()
 
-check()
-
 spell_check()
+
+check()
+goodpractice::goodpractice()
+
 
 
