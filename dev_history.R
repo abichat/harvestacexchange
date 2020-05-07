@@ -30,6 +30,7 @@ library(devtools)
 
 # use_r("js_dep")
 
+use_pipe()
 
 load_all()
 document()
