@@ -2,15 +2,18 @@
 % Please edit documentation in R/js_dep.R
 \name{install_js_dep}
 \alias{install_js_dep}
-\title{Install JavaScript libraries and scripts}
+\title{Install JavaScript libraries}
 \usage{
-install_js_dep()
+install_js_dep(force = FALSE)
+}
+\arguments{
+\item{force}{Logical. Should the user be prompted to install?}
 }
 \value{
 \code{NULL}
 }
 \description{
-Install JavaScript libraries and scripts
+Install JavaScript libraries
 }
 \details{
 This must be done once per installation. You must have Node.js installed
