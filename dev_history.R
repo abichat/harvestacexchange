@@ -32,6 +32,8 @@ library(devtools)
 
 # use_pipe()
 
+# use_dev_package("dplyr")
+
 load_all()
 document()
 attachment::att_to_description()

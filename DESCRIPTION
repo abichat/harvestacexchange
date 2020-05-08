@@ -15,7 +15,7 @@ BugReports: https://github.com/abichat/harvestacexchange/issues
 Depends: 
     R (>= 2.10)
 Imports: 
-    dplyr,
+    dplyr (>= 0.8.99.9002),
     glue,
     magrittr,
     methods,
@@ -27,6 +27,8 @@ Imports:
     tidyr,
     xml2,
     yesno
+Remotes: 
+    tidyverse/dplyr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
