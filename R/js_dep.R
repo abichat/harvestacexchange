@@ -28,11 +28,10 @@ install_js_dep <- function(dir_js = ".js"){
 #'
 #' @return Logical
 #'
-#' @importFrom purrr quietly
 #'
 #' @examples
 #' harvestacexchange:::check_nodejs()
 check_nodejs <- function(){
-  x <- quietly(system)("node -v >/dev/null 2>&1")
-  length(x$warnings) == 0
+  x <- suppressWarnings(system("node -v >/dev/null 2>&1"))
+  x == 0
 }
