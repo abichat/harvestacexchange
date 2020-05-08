@@ -5,13 +5,9 @@
 \alias{events}
 \title{Harvest turnips prices and events}
 \usage{
-turnips(dir_js = ".js")
+turnips()
 
-events(dir_js = ".js")
-}
-\arguments{
-\item{dir_js}{The directory where all the JS dependencies are installed.
-Default to \code{.js}.}
+events()
 }
 \value{
 A tibble.

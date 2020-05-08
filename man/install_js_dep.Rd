@@ -4,11 +4,7 @@
 \alias{install_js_dep}
 \title{Install JavaScript libraries and scripts}
 \usage{
-install_js_dep(dir_js = ".js")
-}
-\arguments{
-\item{dir_js}{The directory where all JS dependencies will be installed.
-Default to \code{.js}.}
+install_js_dep()
 }
 \value{
 \code{NULL}
@@ -17,7 +13,7 @@ Default to \code{.js}.}
 Install JavaScript libraries and scripts
 }
 \details{
-This must be done once per project. You must have Node.js installed
+This must be done once per installation. You must have Node.js installed
 on your computer.
 }
 \examples{

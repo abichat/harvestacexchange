@@ -2,12 +2,11 @@
 #'
 #' @param page The targeted URL.
 #' @param path_write Path to write to.
-#' @inheritParams turnips
 #'
 #' @return \code{NULL}
 #'
-harvest_and_write <- function(page, path_write, dir_js = ".js"){
-  path_js <- file.path(dir_js, "write_html.js")
+harvest_and_write <- function(page, path_write){
+  path_js <- system.file("js", "write_html.js", package = "harvestacexchange")
   command <- paste("node", path_js, page, path_write)
   system(command)
   invisible()

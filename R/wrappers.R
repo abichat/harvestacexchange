@@ -1,8 +1,5 @@
 #' Harvest turnips prices and events
 #'
-#' @param dir_js The directory where all the JS dependencies are installed.
-#' Default to \code{.js}.
-#'
 #' @return A tibble.
 #' @export
 #'
@@ -11,11 +8,9 @@
 #' turnips()
 #' events()
 #' }
-turnips <- function(dir_js = ".js"){
-  path_js <- file.path(dir_js, "write_html.js")
-  stopifnot(file.exists(path_js))
+turnips <- function(){
   file <- tempfile(fileext = ".html")
-  harvest_and_write(harvestacexchange::url_turnips, file, dir_js)
+  harvest_and_write(harvestacexchange::url_turnips, file)
   df <- html_to_tibble_turnips(file)
   rm(file)
   return(df)
@@ -23,11 +18,9 @@ turnips <- function(dir_js = ".js"){
 
 #' @rdname turnips
 #' @export
-events <- function(dir_js = ".js"){
-  path_js <- file.path(dir_js, "write_html.js")
-  stopifnot(file.exists(path_js))
+events <- function(){
   file <- tempfile(fileext = ".html")
-  harvest_and_write(harvestacexchange::url_events, file, dir_js)
+  harvest_and_write(harvestacexchange::url_events, file)
   df <- html_to_tibble_events(file)
   rm(file)
   return(df)

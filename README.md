@@ -28,8 +28,8 @@ computer.
 library(harvestacexchange)
 ```
 
-The first time you use **harvestacexchange** in a project, you need to
-install the JS dependencies.
+When you install **harvestacexchange**, you need to install the JS
+dependencies once.
 
 ``` r
 install_js_dep()
@@ -43,20 +43,20 @@ You can harvest turnips prices from
 ``` r
 df_turnips <- turnips()
 df_turnips
-#> # A tibble: 47 x 7
-#>    price waiters time  grade voters line      tags         
-#>    <dbl>   <dbl> <chr> <dbl>  <dbl> <chr>     <chr>        
-#>  1   644      87 6.2h    100     10 Line Full Tips Required
-#>  2   629     170 11.0h   100      4 Join Line No tag       
-#>  3   619      43 2.1h    100      2 Line Full Tips Required
-#>  4   612      56 4.0h    100      7 Line Full No tag       
-#>  5   610      58 3.9h    100      5 Line Full No tag       
-#>  6   610      56 4.3h     83      6 Line Full Tips Required
-#>  7   595      35 1.9h    100      2 Join Line Tips Required
-#>  8   592      48 2.5h    100      2 Join Line Tips Required
-#>  9   588      13 41m     100      9 Line Full No tag       
-#> 10   584      46 5.0h    100      1 Join Line No tag       
-#> # … with 37 more rows
+#> # A tibble: 21 x 7
+#>    price waiters time        grade voters line      tags         
+#>    <dbl>   <dbl> <chr>       <dbl>  <dbl> <chr>     <chr>        
+#>  1   654       5 24m           100      5 Line Full Tips Required
+#>  2   609      19 2.0h          100     48 Line Full No tag       
+#>  3   588      17 1.3h          100     46 Join Line Tips Required
+#>  4   587      12 45m           100      8 Join Line Tips Required
+#>  5   582      22 2.2h          100      1 Join Line No tag       
+#>  6   555       0 0m             98    160 Line Full Tips Required
+#>  7   538       6 Not Started    NA      0 Join Line Tips Required
+#>  8   531      12 41m           100     10 Join Line No tag       
+#>  9   529       0 0m            100      8 Line Full Tips Required
+#> 10   507       3 21m           100      3 Join Line No tag       
+#> # … with 11 more rows
 ```
 
 and list of events from
@@ -65,20 +65,20 @@ and list of events from
 ``` r
 df_events <- events()
 df_events
-#> # A tibble: 82 x 8
-#>    event     waiters time   grade voters line   notice                   tags   
-#>    <chr>       <dbl> <chr>  <dbl>  <dbl> <chr>  <chr>                    <chr>  
-#>  1 Villager…       0 Not S…    NA      0 Join … "Fuchsia is crafting a … No tag 
-#>  2 Villager…       1 Not S…   100      4 Join … "I am crafting IRONWOOD… No tag 
-#>  3 Shopping        0 0m       100      6 Join … "Leif is at my island! … No tag 
-#>  4 Hangout         0 Not S…    92     90 Join … "looking for mama bear … No tag 
-#>  5 Villager…       2 10m       50      2 Join … "Jeremiah is making a w… No tag 
-#>  6 Sahara          0 Not S…    NA      0 Join … "first time hosting! pl… No tag 
-#>  7 Other           0 Not S…    NA      0 Join … "Want to take my unwant… No tag 
-#>  8 Shopping        9 22m      100      5 Join … "Free diy and fashion, … No tag 
-#>  9 Villager…       3 Not S…    98     98 Join … "DOES ANYONE HAVE LEIF … No tag 
-#> 10 Other           1 4m        NA      0 Join … "Mystery Bag Event! For… Tips R…
-#> # … with 72 more rows
+#> # A tibble: 43 x 8
+#>    event      waiters time     grade voters line   notice                  tags 
+#>    <chr>        <dbl> <chr>    <dbl>  <dbl> <chr>  <chr>                   <chr>
+#>  1 Other            0 Not Sta…   100      6 Join … "Looking for 4 fossils… No t…
+#>  2 Other            0 Not Sta…   100      9 Join … "Looking for friendly … No t…
+#>  3 Villager …       0 Not Sta…    NA      0 Join … "Vesta's crafting a pe… No t…
+#>  4 Celeste          0 Not Sta…   100     39 Join … "Heyyy! Will be doing … No t…
+#>  5 Villager …       0 Not Sta…    NA      0 Join … "Chevre is crafting a … No t…
+#>  6 Villager …       0 0m         100     14 Join … "ROSE CROWN CRAFTED BY… No t…
+#>  7 Other            0 0m          98     63 Join … "Want to make an easy … No t…
+#>  8 Other            0 0m          97    496 Join … "Buying fish bait. 20 … No t…
+#>  9 Shopping         2 Not Sta…    NA      0 Join … "Hi! Doing Fossils Tra… No t…
+#> 10 Villager …       4 10m         97     38 Join … "Astrid is crafting a … No t…
+#> # … with 33 more rows
 ```
 
 ### Filter
@@ -89,42 +89,30 @@ df_events
 df_turnips %>% 
   filter_price_min(price_min = 500) %>% 
   filter_no_tag()
-#> # A tibble: 18 x 7
-#>    price waiters time  grade voters line      tags  
-#>    <dbl>   <dbl> <chr> <dbl>  <dbl> <chr>     <chr> 
-#>  1   629     170 11.0h   100      4 Join Line No tag
-#>  2   612      56 4.0h    100      7 Line Full No tag
-#>  3   610      58 3.9h    100      5 Line Full No tag
-#>  4   588      13 41m     100      9 Line Full No tag
-#>  5   584      46 5.0h    100      1 Join Line No tag
-#>  6   584      45 2.5h     96     26 Line Full No tag
-#>  7   580      34 2.4h     96     59 Line Full No tag
-#>  8   576      31 1.9h    100      4 Line Full No tag
-#>  9   571      35 2.2h    100      3 Join Line No tag
-#> 10   559      32 2.3h    100      3 Join Line No tag
-#> 11   544      25 1.5h    100      3 Join Line No tag
-#> 12   533      14 51m     100      4 Line Full No tag
-#> 13   527       5 17m     100      8 Join Line No tag
-#> 14   523      14 53m     100      4 Join Line No tag
-#> 15   519      19 34m     100      1 Join Line No tag
-#> 16   510      10 33m     100      3 Join Line No tag
-#> 17   507       6 18m     100      2 Join Line No tag
-#> 18   506       0 0m      100      2 Line Full No tag
+#> # A tibble: 6 x 7
+#>   price waiters time  grade voters line      tags  
+#>   <dbl>   <dbl> <chr> <dbl>  <dbl> <chr>     <chr> 
+#> 1   609      19 2.0h    100     48 Line Full No tag
+#> 2   582      22 2.2h    100      1 Join Line No tag
+#> 3   531      12 41m     100     10 Join Line No tag
+#> 4   507       3 21m     100      3 Join Line No tag
+#> 5   507       6 21m      NA      0 Join Line No tag
+#> 6   505       4 17m     100      2 Join Line No tag
 
 df_events %>% 
   filter_words("gold") %>% 
   filter_grade_min(grade_min = 90)
 #> # A tibble: 8 x 8
-#>   event     waiters time    grade voters line   notice                     tags 
-#>   <chr>       <dbl> <chr>   <dbl>  <dbl> <chr>  <chr>                      <chr>
-#> 1 Villager…       1 3m        100      9 Join … "Portia is crafting a Luc… No t…
-#> 2 Other           0 Not St…    NA      0 Join … "Looking for gold boots a… No t…
-#> 3 Shopping        0 0m        100     14 Join … "Ableâ\u0080\u0099s has t… No t…
-#> 4 Villager…       0 0m         97    961 Join … "Purrl is crafting a GOLD… No t…
-#> 5 Villager…       0 0m         98     70 Line … "Pietro is crafting â\u00… No t…
-#> 6 Villager…       0 0m        100     19 Line … "Golden toilet by Cleo, s… No t…
-#> 7 Other           1 47m       100      3 Join … "Giving 40k for Gold Nugg… No t…
-#> 8 Villager…       0 0m        100     47 Line … "Eugene is crafting a GOL… No t…
+#>   event     waiters time    grade voters line    notice                    tags 
+#>   <chr>       <dbl> <chr>   <dbl>  <dbl> <chr>   <chr>                     <chr>
+#> 1 Other           0 0m         97    496 Join L… "Buying fish bait. 20 fi… No t…
+#> 2 Villager…       4 10m        97     38 Join L… "Astrid is crafting a lu… No t…
+#> 3 Shopping        0 Not St…    NA      0 Join L… "Hi! Iâ\u0080\u0099m buy… No t…
+#> 4 Villager…       1 19m        NA      0 Join L… "NO FEE CRAFTING: ironwo… No t…
+#> 5 Villager…       2 11m        NA      0 Join L… "Colton is crafting Gold… No t…
+#> 6 Villager…       2 16m       100      3 Join L… "My Dear Olivia is now c… No t…
+#> 7 Villager…       0 0m        100     80 Line F… "Diana is crafting GOLDE… No t…
+#> 8 Villager…       4 26m       100     11 Join L… "Raymond is crafting GOL… No t…
 ```
 
 You can also compare these data to old versions and keep only the new

@@ -37,7 +37,7 @@ You need to have [Node.js](https://nodejs.org/) installed on your computer.
 library(harvestacexchange)
 ```
 
-The first time you use **harvestacexchange** in a project, you need to install the JS dependencies.
+When you install **harvestacexchange**, you need to install the JS dependencies once.
 
 ```{r js, eval=FALSE}
 install_js_dep()
